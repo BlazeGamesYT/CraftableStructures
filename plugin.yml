@@ -3,3 +3,8 @@ version: 1.0
 author: BryceBlazeGaming
 main: com.bryceblazegames.craftablestructures.craftableStructures
 api-version: 1.16
+commands:
+  givebook:
+    aliases: recipebook
+    usage: /givebook
+    description: Give yourself the recipe book from CraftableStructures.

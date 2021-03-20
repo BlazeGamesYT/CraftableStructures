@@ -1,6 +1,7 @@
 package com.bryceblazegames.craftablestructures.items;
 
 import org.bukkit.Material;
+import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
@@ -13,7 +14,7 @@ public class itemManager {
 
     public static void init() {
 
-
+        createRecipeBook();
 
     }
 
@@ -36,7 +37,17 @@ public class itemManager {
 
     public static void createRecipeBook() {
 
+        ItemStack item = new ItemStack(Material.BOOK, 1);
+        ItemMeta meta = item.getItemMeta();
 
+        meta.setDisplayName("§eRecipe Book §7(Right-Click)");
+
+        meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
+        //meta.setCustomModelData(1);
+
+        item.setItemMeta(meta);
+
+        recipeBook = item;
 
     }
 
