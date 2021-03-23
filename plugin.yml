@@ -3,6 +3,7 @@ version: 1.0
 author: BryceBlazeGaming
 main: com.bryceblazegames.craftablestructures.craftableStructures
 api-version: 1.16
+depend:  [StructureBlockLib]
 commands:
   givebook:
     aliases: recipebook

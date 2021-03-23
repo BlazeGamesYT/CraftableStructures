@@ -24,7 +24,6 @@ public class itemManager {
     public static void init() {
 
         createRecipeBook();
-
         createDesertTemple();
 
     }
@@ -76,6 +75,7 @@ public class itemManager {
         ItemMeta meta = item.getItemMeta();
 
         meta.setDisplayName("§dDesert Temple");
+        meta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
         //meta.setCustomModelData(1);
 
         Glow glow = new Glow(NamespacedKey.minecraft("70"));
@@ -86,14 +86,15 @@ public class itemManager {
         desertTemple = item;
 
         ItemStack result = new ItemStack(item.clone());
-        ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft("desertTemple"), result);
+
+        ShapedRecipe recipe = new ShapedRecipe(NamespacedKey.minecraft("deserttemple"), result);
         recipe.shape(" C ",
                      " S ",
                      "TTT");
         recipe.setIngredient('C', Material.CACTUS);
         recipe.setIngredient('S' , Material.SAND);
         recipe.setIngredient('T', Material.SANDSTONE);
-        Bukkit.addRecipe(recipe);
+        Bukkit.getServer().addRecipe(recipe);
 
 
     }

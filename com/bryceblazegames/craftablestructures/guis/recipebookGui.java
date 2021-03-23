@@ -25,6 +25,7 @@ public class recipebookGui implements InventoryHolder {
 
         //Glass Panes
         item = itemManager.createItem(" ", Material.BLACK_STAINED_GLASS_PANE, Collections.singletonList(" "), 0);
+        ItemStack air = new ItemStack(Material.AIR, 1);
 
         //Border
         for (int i = 0; i < 9; i++) {
@@ -49,7 +50,8 @@ public class recipebookGui implements InventoryHolder {
         }
 
         //Items
-        inv.setItem(inv.firstEmpty(), itemManager.desertTemple);
+        inv.addItem(itemManager.desertTemple);
+
 
     }
 

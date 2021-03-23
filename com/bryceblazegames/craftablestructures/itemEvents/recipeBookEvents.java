@@ -31,7 +31,6 @@ public class recipeBookEvents implements Listener {
     @EventHandler
     public static void onClick(InventoryDragEvent event) {
 
-        if (event.getInventory() == null) { return; }
         if (event.getInventory().getHolder() instanceof recipebookGui) {
 
             event.setCancelled(true);
