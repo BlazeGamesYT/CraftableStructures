@@ -52,7 +52,6 @@ public class craftableStructures extends JavaPlugin {
         //FINISHED
         console.sendMessage(ChatColor.GREEN + "[CraftStruct]: Loaded!");
 
-        console.sendMessage(getResourceAsFile("desert_temple.nbt").toString());
     }
 
     @Override
@@ -84,7 +83,7 @@ public class craftableStructures extends JavaPlugin {
 
     public static File getResourceAsFile(String resourcePath) {
         try {
-            InputStream in = ClassLoader.getSystemClassLoader().getResourceAsStream(resourcePath);
+            InputStream in = instance.getResource(resourcePath);
             if (in == null) {
                 return null;
             }
@@ -109,7 +108,7 @@ public class craftableStructures extends JavaPlugin {
 
     public static Path getDesertTemple() {
 
-        final Path desertTemplePath = Objects.requireNonNull(getResourceAsFile("desert_temple.nbt")).toPath();
+        final Path desertTemplePath = getResourceAsFile("desert-temple.nbt").toPath();
 
         return desertTemplePath;
 
